@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:08:09 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/17 11:05:15 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/21 16:52:02 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	str1 = (unsigned char *) s1;
 	str2 = (unsigned char *) s2;
 	i = 0;
-	while (str1[i] && str2[i] && i < n)
+	while (i < n - 1)
 	{
 		if (str1[i] != str2[i])
 			break ;

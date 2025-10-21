@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 08:02:49 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/17 09:16:56 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/21 18:20:06 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char )c)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (s[i] == (char )c)
+		return ((char *)&s[i]);
 	return (NULL);
 }

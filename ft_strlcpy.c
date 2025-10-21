@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:06:30 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/17 08:22:46 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/21 18:35:58 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	if (size == 0)
 		return (slen);
 	i = 0;
-	while (i < size - 1)
+	while (i < size - 1 && src[i])
 	{
 		dst[i] = src[i];
 		i++;
