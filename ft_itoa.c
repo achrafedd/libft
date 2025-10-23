@@ -5,76 +5,79 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 07:58:36 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/19 09:47:25 by aeddiba          ###   ########.fr       */
+/*   Created: 2025/10/23 09:16:42 by aeddiba           #+#    #+#             */
+/*   Updated: 2025/10/23 11:19:37 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static void	reverse_arr(char **arr)
+static int	calc_size(long n)
 {
-	int		i;
-	int		len;
-	char	tmp;
+	int	size;
 
-	len = ft_strlen(*arr) - 1;
-	i = 0;
-	if ((*arr)[i] == '-')
-		i++;
-	while (i < len)
+	if (n == 0)
+		return (1);
+	size = 0;
+	if (n < 0)
 	{
-		tmp = (*arr)[i];
-		(*arr)[i] = (*arr)[len];
-		(*arr)[len] = tmp;
-		len--;
-		i++;
+		n = -n;
+		size++;
 	}
+	while (n)
+	{
+		n /= 10;
+		size++;
+	}
+	return (size);
 }
 
-static char	*create_str(long n, int is_negative)
+static int	power(int n, int pow)
+{
+	int	res;
+
+	res = 1;
+	while (pow)
+	{
+		res *= n;
+		pow--;
+	}
+	return (res);
+}
+
+static char	*create_str(long n, int size)
 {
 	char	*res;
 	int		i;
+	int		p;
 
-	if (n == 0)
-	{
-		res = (char *) malloc(sizeof(char) * 2);
-		if (res == NULL)
-			return (NULL);
-		res[0] = '0';
-		res[1] = '\0';
-		return (res);
-	}
-	res = (char *) malloc(sizeof(char) * 13);
+	res = (char *) ft_calloc(size + 1, 1);
 	if (res == NULL)
 		return (NULL);
 	i = 0;
-	if (is_negative)
-		res[i++] = '-';
-	while (n)
+	if (n < 0)
 	{
-		res[i++] = (n % 10) + '0';
-		n /= 10;
+		n = -n;
+		res[i++] = '-';
+		size--;
 	}
-	res[i] = '\0';
+	p = power(10, --size);
+	while (p)
+	{
+		res[i++] = (n / p) + 48;
+		n %= p;
+		p /= 10;
+	}
 	return (res);
 }
 
 char	*ft_itoa(int n)
 {
+	int		size;
 	char	*res;
-	int		is_negative;
-	long	holder;
 
-	is_negative = 0;
-	holder = (long) n;
-	if (n < 0)
-	{
-		holder = -holder;
-		is_negative = 1;
-	}
-	res = create_str(holder, is_negative);
-	reverse_arr(&res);
+	size = calc_size(n);
+	res = create_str(n, size);
 	return (res);
 }

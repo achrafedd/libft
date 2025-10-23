@@ -6,11 +6,12 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 10:49:10 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/20 16:51:10 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/22 18:51:23 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	count_words(char const *s, char c)
 {
@@ -18,6 +19,8 @@ static int	count_words(char const *s, char c)
 	int	count;
 
 	i = 0;
+	if (!s[i])
+		return (0);
 	while (s[i] == c)
 		i++;
 	if (!s[i])
@@ -38,13 +41,14 @@ static char	*create_str(char const *s, char c)
 	int		i;
 	int		len;
 
-	while (s[len] != c)
+	len = 0;
+	while (s[len] != c && s[len] != '\0')
 		len++;
 	i = 0;
 	res = (char *) malloc(sizeof(char) * len + 1);
 	if (res == NULL)
 		return (NULL);
-	while (s[i] != c)
+	while (i < len)
 	{
 		res[i] = s[i];
 		i++;
@@ -68,7 +72,7 @@ static char	**append(char const *s, char c, int words)
 	char	**res;
 	int		i;
 
-	res = (char **) malloc(sizeof(char *) * words + 1);
+	res = (char **) malloc(sizeof(char *) * (words + 1));
 	if (res == NULL)
 		return (NULL);
 	i = 0;
@@ -94,7 +98,7 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 	int		words;
 
-	if (!s || !c)
+	if (!s)
 		return (NULL);
 	words = count_words(s, c);
 	res = append(s, c, words);

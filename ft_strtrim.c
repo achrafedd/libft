@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 08:52:08 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/18 10:44:02 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/22 12:08:14 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,11 @@ static char	*creat_str(char const *str, int start, int end)
 	char	*res;
 	int		i;
 
-	res = (char *) malloc(sizeof(char) * (end - start) + 1);
-	if (res == NULL)
-		return (NULL);
+	res = (char *) malloc(end - start + 1);
 	i = 0;
-	while (i < (end - start) + 1)
+	while (i < (end - start))
 	{
-		res[i] = str[start + i];
+		res[i] = str[i];
 		i++;
 	}
 	res[i] = '\0';
@@ -59,11 +57,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (res);
 	}
 	start = 0;
-	end = ft_strlen(s1) - 1;
-	while (check_set(s1[start], set) && s1[start])
+	end = ft_strlen(s1);
+	while (start < end && check_set(s1[start], set))
 		start++;
-	while (check_set(s1[end], set) && end > start)
+	while (end > start && check_set(s1[end -1], set))
 		end--;
-	res = creat_str(s1, start, end);
+	res = creat_str(&s1[start], start, end);
 	return (res);
 }
