@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 19:11:37 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/21 19:13:42 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/24 22:59:57 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}
-	*lst = NULL;
 }

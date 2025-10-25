@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:39:33 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/17 08:19:58 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/24 20:34:54 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*c2;
 	size_t			i;
 
+	if (!dest || !src)
+		return (NULL);
 	c1 = (unsigned char *) dest;
 	c2 = (unsigned char *) src;
 	i = 0;

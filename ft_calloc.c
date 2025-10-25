@@ -6,13 +6,11 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 16:24:37 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/21 19:26:24 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/24 20:50:54 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
-#include <stdlib.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

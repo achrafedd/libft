@@ -1,4 +1,5 @@
-CFLAG = -Wall -Wextra -Werror -I.
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 SRC = ft_atoi.c ft_itoa.c ft_putnbr_fd.c ft_strlcpy.c ft_tolower.c \
       ft_bzero.c ft_memchr.c ft_putstr_fd.c ft_strlen.c ft_toupper.c \
@@ -32,4 +33,4 @@ fclean: clean
 
 re: fclean all
 
-#.PHONY: all fclean clean
+.PHONY: all fclean clean

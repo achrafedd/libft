@@ -6,12 +6,11 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 10:49:10 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/22 18:51:23 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/24 21:00:50 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	count_words(char const *s, char c)
 {

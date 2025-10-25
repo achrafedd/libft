@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:54:54 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/21 09:53:48 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/24 20:53:58 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst == NULL || !del)
+	if (!lst || !del)
 		return ;
 	del(lst->content);
 	free(lst);

@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:08:09 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/21 16:52:02 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/24 20:29:34 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	size_t			i;
 
 	if (n == 0)
+		return (0);
+	if (!s1 || !s2)
 		return (0);
 	str1 = (unsigned char *) s1;
 	str2 = (unsigned char *) s2;
