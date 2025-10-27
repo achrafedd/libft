@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 08:52:08 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/22 12:08:14 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/27 16:22:04 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,6 @@ static int	check_set(char c, char const *set)
 	return (0);
 }
 
-static char	*creat_str(char const *str, int start, int end)
-{
-	char	*res;
-	int		i;
-
-	res = (char *) malloc(end - start + 1);
-	i = 0;
-	while (i < (end - start))
-	{
-		res[i] = str[i];
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
@@ -52,8 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	if (*s1 == '\0')
 	{
-		res = (char *) malloc(sizeof(char) * 1);
-		res[0] = '\0';
+		res = (char *) ft_calloc(1, sizeof(char));
 		return (res);
 	}
 	start = 0;
@@ -62,6 +45,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && check_set(s1[end -1], set))
 		end--;
-	res = creat_str(&s1[start], start, end);
+	res = (char *) ft_calloc(end - start + 1, sizeof(char));
+	if (!res)
+		return (NULL);
+	ft_memmove(res, &s1[start], end - start);
 	return (res);
 }
