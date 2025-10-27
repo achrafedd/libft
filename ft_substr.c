@@ -6,12 +6,11 @@
 /*   By: aeddiba <aeddiba@student.1338.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 17:09:21 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/22 09:54:47 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/27 15:39:01 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 size_t	count_len(char const *str, unsigned int start)
 {

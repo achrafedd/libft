@@ -6,12 +6,11 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 09:16:42 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/26 18:28:11 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/27 15:37:47 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	calc_size(long n)
 {

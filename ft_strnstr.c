@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:08:16 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/27 09:51:40 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/27 15:38:34 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	if (!(*little))
 		return ((char *) big);
-	if (*big == '\0')
-		return (0);
 	llen = ft_strlen(little);
 	while (big[i] && i + llen <= len)
 	{
