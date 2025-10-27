@@ -6,7 +6,7 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:40:15 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/24 21:11:11 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/26 22:01:07 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,12 @@
 char	*ft_strdup(const char *s)
 {
 	char	*res;
-	int		i;
 	int		len;
 
-	i = 0;
 	len = ft_strlen(s);
-	res = (char *) malloc(sizeof(char) * len + 1);
+	res = (char *) ft_calloc(len + 1, sizeof(char));
 	if (res == NULL)
 		return (NULL);
-	while (s[i])
-	{
-		res[i] = s[i];
-		i++;
-	}
-	res[i] = '\0';
+	ft_memcpy(res, s, len);
 	return (res);
 }

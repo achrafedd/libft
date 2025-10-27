@@ -6,11 +6,12 @@
 /*   By: aeddiba <aeddiba@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 09:16:42 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/24 22:49:12 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/26 18:28:11 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	calc_size(long n)
 {
@@ -32,51 +33,29 @@ static int	calc_size(long n)
 	return (size);
 }
 
-static int	power(int n, int pow)
-{
-	int	res;
-
-	res = 1;
-	while (pow)
-	{
-		res *= n;
-		pow--;
-	}
-	return (res);
-}
-
-static char	*create_str(long n, int size)
-{
-	char	*res;
-	int		i;
-	int		p;
-
-	res = (char *) ft_calloc(size + 1, 1);
-	if (res == NULL)
-		return (NULL);
-	i = 0;
-	if (n < 0)
-	{
-		n = -n;
-		res[i++] = '-';
-		size--;
-	}
-	p = power(10, --size);
-	while (p)
-	{
-		res[i++] = (n / p) + 48;
-		n %= p;
-		p /= 10;
-	}
-	return (res);
-}
-
 char	*ft_itoa(int n)
 {
 	int		size;
 	char	*res;
+	int		min;
+	long	holder;
 
 	size = calc_size(n);
-	res = create_str(n, size);
+	res = (char *) ft_calloc(size + 1, sizeof(char));
+	if (res == NULL)
+		return (NULL);
+	min = 0;
+	holder = (long) n;
+	if (holder < 0)
+	{
+		holder = -holder;
+		res[0] = '-';
+		min = 1;
+	}
+	while (--size >= min)
+	{
+		res[size] = (holder % 10) + 48;
+		holder /= 10;
+	}
 	return (res);
 }

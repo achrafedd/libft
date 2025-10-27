@@ -6,14 +6,13 @@
 /*   By: aeddiba <aeddiba@student.1339.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2027/10/14 11:52:39 by aeddiba           #+#    #+#             */
-/*   Updated: 2025/10/21 16:12:59 by aeddiba          ###   ########.fr       */
+/*   Updated: 2025/10/27 15:30:57 by aeddiba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
